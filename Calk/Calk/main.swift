@@ -10,7 +10,10 @@ func showResult(_ result: Int) {
 print("Добро пожаловать в программу калькулятор.")
 
 while true {
-    let operation = getDataFromUser(description: "Выберите операцию: +, -, *, /")
+    let operation = getDataFromUser(description: "Выберите операцию: +, -, *, /. Для завершения введите q.")
+    if operation == "q" {
+        exit(0)
+    }
     let firstNumber = getDataFromUser(description: "Введите целое число")
     let secondNumber = getDataFromUser(description: "Введите второе число")
 
