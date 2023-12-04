@@ -1,13 +1,3 @@
-//
-//  main.swift
-//  Calk
-//
-//  Created by Admin on 22.11.2023.
-//
-
-import Foundation
-import Darwin
-
 func getDataFromUser(description: String) -> String {
     print(description)
     return readLine() ?? ""
@@ -17,13 +7,10 @@ func showResult(_ result: Int) {
     print("Результат: " + String(result))
 }
 
-print("Добро пожаловать в программу калькулятор")
+print("Добро пожаловать в программу калькулятор.")
 
 while true {
-    let operation = getDataFromUser(description: "Выберите операцию: +, -, *, /. Для завершения работы введите q.")
-    if operation == "q" {
-        exit(0)
-    }
+    let operation = getDataFromUser(description: "Выберите операцию: +, -, *, /")
     let firstNumber = getDataFromUser(description: "Введите целое число")
     let secondNumber = getDataFromUser(description: "Введите второе число")
 
@@ -31,38 +18,27 @@ while true {
 
     if let firstNumber = Int(firstNumber) {
         if let secondNumber = Int(secondNumber) {
-            culculate(opertion: operation, firstNumber: firstNumber, secondNumber: secondNumber)
+            calculate(operation: operation, firstNumber: firstNumber, secondMunber: secondNumber)
         } else {
-            print("Вы вели не верное первое число")
+            print("Вы ввели не верное второе значение")
         }
     } else {
         print("Вы ввели не верное первое число")
     }
-    
-    print("")
-    print("--------------------------------------------")
-    print("")
 }
 
 
-
-
-
-
-
-
-func culculate (opertion: String, firstNumber: Int, secondNumber: Int ) {
+func calculate(operation: String, firstNumber first: Int, secondMunber second: Int) {
     switch operation {
-    case "+": showResult(firstNumber + secondNumber)
-    case "-": showResult(firstNumber - secondNumber)
-    case "*": showResult(firstNumber * secondNumber)
+    case "+": showResult(first + second)
+    case "-": showResult(first - second)
+    case "*": showResult(first * second)
     case "/":
-        if secondNumber != 0 {
-            showResult(firstNumber / secondNumber)
+        if second != 0 {
+            showResult(first / second)
         } else {
             print("Деление на 0 является недопустимой операцией")
         }
-    default:
-        print("Вы ввели недопустимую операцию")
+    default: print("Вы ввели не верную операцию")
     }
 }
