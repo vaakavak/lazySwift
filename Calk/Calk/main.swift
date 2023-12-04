@@ -9,19 +9,31 @@ func showResult(_ result: Int) {
 
 print("Добро пожаловать в программу калькулятор.")
 
+var history: [String] = []
+
 while true {
-    let operation = getDataFromUser(description: "Выберите операцию: +, -, *, /. Для завершения введите q.")
+    let operation = getDataFromUser(description: "Выберите операцию: +, -, *, /. Для завершения введите q. Для просмотра истории введите h")
     if operation == "q" {
         exit(0)
+    } else if operation == "h" {
+        for example in history {
+            print(example)
+        }
+        continue
     }
     let firstNumber = getDataFromUser(description: "Введите целое число")
     let secondNumber = getDataFromUser(description: "Введите второе число")
 
-    print("Идет вычисление примера: " + firstNumber + " " + operation + " " + secondNumber)
+    let example = firstNumber + " " + operation + " " + secondNumber
+    print("Идет вычисление примера: " + example)
 
     if let firstNumber = Int(firstNumber) {
         if let secondNumber = Int(secondNumber) {
-            calculate(operation: operation, firstNumber: firstNumber, secondMunber: secondNumber)
+            let result = calculate(operation: operation, firstNumber: firstNumber, secondMunber: secondNumber)
+            if let result = result {
+                showResult(result)
+                history.append(example + " = " + String(result))
+            }
         } else {
             print("Вы ввели не верное второе значение")
         }
@@ -35,17 +47,19 @@ while true {
 }
 
 
-func calculate(operation: String, firstNumber first: Int, secondMunber second: Int) {
+func calculate(operation: String, firstNumber first: Int, secondMunber second: Int) -> Int? {
     switch operation {
-    case "+": showResult(first + second)
-    case "-": showResult(first - second)
-    case "*": showResult(first * second)
+    case "+": return first + second
+    case "-": return first - second
+    case "*": return first * second
     case "/":
         if second != 0 {
-            showResult(first / second)
+            return first / second
         } else {
             print("Деление на 0 является недопустимой операцией")
+            return nil
         }
     default: print("Вы ввели не верную операцию")
+        return nil
     }
 }
