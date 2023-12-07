@@ -21,22 +21,19 @@ while true {
 
 
 func calculate(operation: String, firstNumber first: Int, secondMunber second: Int) -> Int? {
-    guard !(operation == "/" && second == 0) else {
-        print("Деление на 0 является недопустимой операцией")
-        return nil
-    } //если это условие никогда не сбудется. Переходим к следующим инструкциям. Если совпало, выводим сообщение на 0 делить низя
     
     switch operation {
-    case "+": return first + second
-    case "-": return first - second
-    case "*": return first * second
+    case "+": 
+        return first + second
+    case "-":
+        return first - second
+    case "*": 
+        return first * second
+    case "/" where second == 0:
+        print("Деление на 0 является недопустимой операцией")
+        return nil
     case "/":
-        if second != 0 {
-            return first / second
-        } else {
-            print("Деление на 0 является недопустимой операцией")
-            return nil
-        }
+        return first / second
     default: print("Вы ввели не верную операцию")
         return nil
     }
