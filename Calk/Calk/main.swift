@@ -1,48 +1,21 @@
-func getDataFromUser(description: String) -> String {
-    print(description)
-    return readLine() ?? ""
-}
-
-func showResult(_ result: Int) {
-    print("Результат: " + String(result))
-}
-
 print("Добро пожаловать в программу калькулятор.")
 
 var history: [String] = []
 
 while true {
-    let operation = getDataFromUser(description: "Выберите операцию: +, -, *, /. Для завершения введите q. Для просмотра истории введите h")
-    if operation == "q" {
+    let action = getDataFromUser(description: "Что вы хотите сделать: c - расчет примера. q - завершение работы. h - просмотр истории.")
+    switch action {
+    case "c":
+        calculate()
+    case "q":
         exit(0)
-    } else if operation == "h" {
-        for example in history {
-            print(example)
-        }
-        continue
+    case "h":
+        showHistory()
+    default:
+        print("Недопустимое действие")
     }
-    let firstNumber = getDataFromUser(description: "Введите целое число")
-    let secondNumber = getDataFromUser(description: "Введите второе число")
-
-    let example = firstNumber + " " + operation + " " + secondNumber
-    print("Идет вычисление примера: " + example)
-
-    if let firstNumber = Int(firstNumber) {
-        if let secondNumber = Int(secondNumber) {
-            let result = calculate(operation: operation, firstNumber: firstNumber, secondMunber: secondNumber)
-            if let result = result {
-                showResult(result)
-                history.append(example + " = " + String(result))
-            }
-        } else {
-            print("Вы ввели не верное второе значение")
-        }
-    } else {
-        print("Вы ввели не верное первое число")
-    }
-    
     print("")
-    print("-----------------------------------")
+    print("___________________________________________")
     print("")
 }
 
@@ -62,4 +35,48 @@ func calculate(operation: String, firstNumber first: Int, secondMunber second: I
     default: print("Вы ввели не верную операцию")
         return nil
     }
+}
+
+func getDataFromUser(description: String) -> String {
+    print(description)
+    return readLine() ?? ""
+}
+
+func showResult(_ result: Int) {
+    print("Результат: " + String(result))
+}
+
+func showHistory() {
+    for example in history {
+        print(example)
+    }
+}
+
+func calculate() {
+    let operation = getDataFromUser(description: "Выберите операцию: +, -, *, /.")
+    guard operation == "+" || operation == "-" || operation == "*" || operation == "/" else {
+        print("Вы ввели не верную операцию")
+        return
+    }
+    
+    let firstNumber = getDataFromUser(description: "Введите целое число")
+    guard let firstNumber = Int(firstNumber) else {
+        print("Вы ввели не верное число")
+        return
+    }
+    
+    let secondNumber = getDataFromUser(description: "Введите второе число")
+    guard let secondNumber = Int(secondNumber) else {
+        print("Вы ввели не верное второе число")
+        return
+    }
+    
+    let example = String(firstNumber) + " " + operation + " " + String(secondNumber)
+    print("Идет вычисление примера: " + example)
+
+    let result = calculate(operation: operation, firstNumber: firstNumber, secondMunber: secondNumber)
+    guard let result = result else { return }
+    
+        showResult(result)
+        history.append(example + " = " + String(result))
 }
