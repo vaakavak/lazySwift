@@ -8,4 +8,4 @@
 import Foundation
 
 print("Hello, World!")
-
+let person: (name1: String, age: Int) = (name1: "Serofim", age: 32)
