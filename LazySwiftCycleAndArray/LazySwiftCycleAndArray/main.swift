@@ -31,7 +31,14 @@ import Foundation
 
 // 2) Возведение значений в массиве в квадрат
 
+var array = makeArray()
+print(array)
 
+for index in 0..<array.count {   //перебираю значения в массиве (типа индекс)
+    array[index] *= array[index] //возвожу в степень
+}
+
+print(array)
 
 
 
