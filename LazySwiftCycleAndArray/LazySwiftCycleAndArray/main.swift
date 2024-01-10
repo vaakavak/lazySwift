@@ -29,17 +29,32 @@ import Foundation
 
 
 
-// 2) Возведение значений в массиве в квадрат
+//// 2) Возведение значений в массиве в квадрат
+//
+//var array = makeArray()
+//print(array)
+//
+//for index in 0..<array.count {   //перебираю значения в массиве (типа индекс)
+//    array[index] *= array[index] //возвожу в степень
+//}
+//
+//print(array)
 
+
+
+// 3) Удаление четных элементов из массива
 var array = makeArray()
-print(array)
 
-for index in 0..<array.count {   //перебираю значения в массиве (типа индекс)
-    array[index] *= array[index] //возвожу в степень
+             //stride создает последовательность
+//array.count - число элементов в массиве  through - куда должны прийти, к 0-му индексу   by - с каким шагом
+for index in stride(from: array.count - 1, through: 0, by: -1) {
+    if index % 2 == 0 {
+        array.remove(at: index)
+    }
 }
 
 print(array)
-
+ 
 
 
 
