@@ -43,18 +43,29 @@ import Foundation
 
 
 // 3) Удаление четных элементов из массива
-var array = makeArray()
+//var array = makeArray()
+//print(array)
 
-             //stride создает последовательность
-//array.count - число элементов в массиве  through - куда должны прийти, к 0-му индексу   by - с каким шагом
-for index in stride(from: array.count - 1, through: 0, by: -1) {
-    if index % 2 == 0 {
-        array.remove(at: index)
-    }
-}
+//             //stride создает последовательность
+////array.count - число элементов в массиве  through - куда должны прийти, к 0-му индексу   by - с каким шагом
+//for index in stride(from: array.count - 1, through: 0, by: -1) {
+//    if index % 2 == 0 {
+//        array.remove(at: index)
+//    }
+//}
 
-print(array)
- 
+
+   //var index = 0
+//while index < array.count {
+//    if array[index] % 2 == 0 {
+//        array.remove(at: index)
+//    } else {
+//        index += 1
+//    }
+//}
+//
+//print(array)
+// 
 
 
 
