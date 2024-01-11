@@ -69,6 +69,9 @@ import Foundation
 
 
 
+// 4) Создание нового массива путем фильтрации исходного
+
+
 func makeArray() -> [Int] {
     var array = [Int]()
     for _ in 0..<10 {
