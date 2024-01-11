@@ -69,33 +69,45 @@ import Foundation
 
 
 
-// 4) Создание нового массива путем фильтрации исходного
+//// 4) Создание нового массива путем фильтрации исходного
+//
+//let array = makeArray()
+//var newArray = [Int]()
+//
+//print(array)
+//print(newArray)
+//
+//for element in array {
+//    if element % 2 != 0 {
+//        newArray.append(element)
+//    }
+//}
+//
+//print(array)
+//print(newArray)
 
-let array = makeArray()
-var newArray = [Int]()
 
-print(array)
-print(newArray)
 
-for element in array {
-    if element % 2 != 0 {
-        newArray.append(element)
+// 5) Сортировка массива по возрастанию
+var array = makeArray()
+
+for i in 0..<array.count{
+    for j in (i+1)..<array.count{
+        if array[j] < array[i]{
+            let tmp = array[i]
+            array[i] = array[j]
+            array[j] = tmp
+        }
     }
 }
 
 print(array)
-print(newArray)
-
-
-
-
-
 
 
 func makeArray() -> [Int] {
     var array = [Int]()
     for _ in 0..<10 {
-        array.append(Int.random(in: -100..<(-10)))
+        array.append(Int.random(in: 0..<100))
     }
     return array
 }
