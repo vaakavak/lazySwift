@@ -71,6 +71,26 @@ import Foundation
 
 // 4) Создание нового массива путем фильтрации исходного
 
+let array = makeArray()
+var newArray = [Int]()
+
+print(array)
+print(newArray)
+
+for element in array {
+    if element % 2 != 0 {
+        newArray.append(element)
+    }
+}
+
+print(array)
+print(newArray)
+
+
+
+
+
+
 
 func makeArray() -> [Int] {
     var array = [Int]()
