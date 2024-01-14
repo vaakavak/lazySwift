@@ -88,20 +88,101 @@ import Foundation
 
 
 
-// 5) Сортировка массива по возрастанию
-var array = makeArray()
+//// 5) Сортировка массива по возрастанию
+//var array = makeArray()
+//
+//for i in 0..<array.count - 1{
+//    for j in (i+1)..<array.count{
+//        if array[j] < array[i]{
+//            let tmp = array[i]
+//            array[i] = array[j]
+//            array[j] = tmp
+//        }
+//    }
+//}
+//
+//print(array)
 
-for i in 0..<array.count{
-    for j in (i+1)..<array.count{
-        if array[j] < array[i]{
-            let tmp = array[i]
-            array[i] = array[j]
-            array[j] = tmp
-        }
-    }
-}
 
-print(array)
+
+
+//// 6) Обмен значениями между массивами
+//var arrayA = makeArray()
+//var arrayB = makeArray()
+//
+//print(arrayA)
+//print("-------------------")
+//print(arrayB)
+//
+//for index in stride(from: arrayA.count - 1, through: 0, by: -1) { //индекс от конца до начала
+//    if arrayA[index] % 2 == 0 { //если в массиве "а" по индексу деление без остатка(четное)
+//        arrayB.append(arrayA[index]) //тогда этот четный элемент добавляем в массив "б"
+//        arrayA.remove(at: index)    //соответственно удаляем по этому же индексу
+//    }
+//}
+//
+//for index in stride(from: arrayB.count - 1, through: 0, by: -1) { //индекс от конца до начала
+//    if arrayB[index] % 2 != 0 {
+//        arrayA.append(arrayB[index])
+//        arrayB.remove(at: index)
+//    }
+//}
+//
+//print("****************************************")
+//print(arrayA)
+//print("-------------------")
+//print(arrayB)
+
+
+//// 7) Создание новых массивов путем фильтрации исходных
+//
+//let arrayA = makeArray()
+//let arrayB = makeArray()
+//
+//var newArrayC = [Int]()
+//var newArrayD = [Int]()
+//
+//var index = 0
+//
+//print(arrayA)
+//print(arrayB)
+//
+////for number in arrayA {
+////    if number % 2 != 0 {
+////        newArrayC.append(number)
+////    } else {
+////        newArrayD.append(number)
+////    }
+////}
+////
+////for number in arrayB {
+////    if number % 2 != 0 {
+////        newArrayC.append(number)
+////    } else {
+////        newArrayD.append(number)
+////    }
+////}
+//
+//while index < arrayA.count && index < arrayB.count { //вариант сокращения. Работает только если длина массивов одинаковая
+//    if arrayA[index] % 2 != 0 {
+//        newArrayC.append(arrayA[index])
+//    } else {
+//        newArrayD.append(arrayA[index])
+//    }
+//    if arrayB[index] % 2 != 0 {
+//        newArrayC.append(arrayB[index])
+//    } else {
+//        newArrayD.append(arrayB[index])
+//    }
+//    index += 1
+//}
+//
+//
+//print("***************************")
+//print(newArrayC)
+//print(newArrayD)
+
+
 
 
 func makeArray() -> [Int] {
