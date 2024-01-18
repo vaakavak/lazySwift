@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		753DCE092B4DA66C00F6C4AB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753DCE082B4DA66C00F6C4AB /* main.swift */; };
+		84ACA3032B5910DD00B78832 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACA3022B5910DD00B78832 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		753DCE032B4DA66C00F6C4AB /* CopyFiles */ = {
+		84ACA2FD2B5910DD00B78832 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		753DCE052B4DA66C00F6C4AB /* LazySwiftCycleAndArray */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LazySwiftCycleAndArray; sourceTree = BUILT_PRODUCTS_DIR; };
-		753DCE082B4DA66C00F6C4AB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		84ACA2FF2B5910DD00B78832 /* gameXandO */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = gameXandO; sourceTree = BUILT_PRODUCTS_DIR; };
+		84ACA3022B5910DD00B78832 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		753DCE022B4DA66C00F6C4AB /* Frameworks */ = {
+		84ACA2FC2B5910DD00B78832 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,66 +38,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		753DCDFC2B4DA66C00F6C4AB = {
+		84ACA2F62B5910DD00B78832 = {
 			isa = PBXGroup;
 			children = (
-				753DCE072B4DA66C00F6C4AB /* LazySwiftCycleAndArray */,
-				753DCE062B4DA66C00F6C4AB /* Products */,
+				84ACA3012B5910DD00B78832 /* gameXandO */,
+				84ACA3002B5910DD00B78832 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		753DCE062B4DA66C00F6C4AB /* Products */ = {
+		84ACA3002B5910DD00B78832 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				753DCE052B4DA66C00F6C4AB /* LazySwiftCycleAndArray */,
+				84ACA2FF2B5910DD00B78832 /* gameXandO */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		753DCE072B4DA66C00F6C4AB /* LazySwiftCycleAndArray */ = {
+		84ACA3012B5910DD00B78832 /* gameXandO */ = {
 			isa = PBXGroup;
 			children = (
-				753DCE082B4DA66C00F6C4AB /* main.swift */,
+				84ACA3022B5910DD00B78832 /* main.swift */,
 			);
-			path = LazySwiftCycleAndArray;
+			path = gameXandO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		753DCE042B4DA66C00F6C4AB /* LazySwiftCycleAndArray */ = {
+		84ACA2FE2B5910DD00B78832 /* gameXandO */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 753DCE0C2B4DA66C00F6C4AB /* Build configuration list for PBXNativeTarget "LazySwiftCycleAndArray" */;
+			buildConfigurationList = 84ACA3062B5910DD00B78832 /* Build configuration list for PBXNativeTarget "gameXandO" */;
 			buildPhases = (
-				753DCE012B4DA66C00F6C4AB /* Sources */,
-				753DCE022B4DA66C00F6C4AB /* Frameworks */,
-				753DCE032B4DA66C00F6C4AB /* CopyFiles */,
+				84ACA2FB2B5910DD00B78832 /* Sources */,
+				84ACA2FC2B5910DD00B78832 /* Frameworks */,
+				84ACA2FD2B5910DD00B78832 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LazySwiftCycleAndArray;
-			productName = LazySwiftCycleAndArray;
-			productReference = 753DCE052B4DA66C00F6C4AB /* LazySwiftCycleAndArray */;
+			name = gameXandO;
+			productName = gameXandO;
+			productReference = 84ACA2FF2B5910DD00B78832 /* gameXandO */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		753DCDFD2B4DA66C00F6C4AB /* Project object */ = {
+		84ACA2F72B5910DD00B78832 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1510;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					753DCE042B4DA66C00F6C4AB = {
-						CreatedOnToolsVersion = 15.1;
+					84ACA2FE2B5910DD00B78832 = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = 753DCE002B4DA66C00F6C4AB /* Build configuration list for PBXProject "LazySwiftCycleAndArray" */;
+			buildConfigurationList = 84ACA2FA2B5910DD00B78832 /* Build configuration list for PBXProject "gameXandO" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -105,29 +105,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 753DCDFC2B4DA66C00F6C4AB;
-			productRefGroup = 753DCE062B4DA66C00F6C4AB /* Products */;
+			mainGroup = 84ACA2F62B5910DD00B78832;
+			productRefGroup = 84ACA3002B5910DD00B78832 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				753DCE042B4DA66C00F6C4AB /* LazySwiftCycleAndArray */,
+				84ACA2FE2B5910DD00B78832 /* gameXandO */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		753DCE012B4DA66C00F6C4AB /* Sources */ = {
+		84ACA2FB2B5910DD00B78832 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				753DCE092B4DA66C00F6C4AB /* main.swift in Sources */,
+				84ACA3032B5910DD00B78832 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		753DCE0A2B4DA66C00F6C4AB /* Debug */ = {
+		84ACA3042B5910DD00B78832 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -190,7 +190,7 @@
 			};
 			name = Debug;
 		};
-		753DCE0B2B4DA66C00F6C4AB /* Release */ = {
+		84ACA3052B5910DD00B78832 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -245,25 +245,19 @@
 			};
 			name = Release;
 		};
-		753DCE0D2B4DA66C00F6C4AB /* Debug */ = {
+		84ACA3072B5910DD00B78832 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		753DCE0E2B4DA66C00F6C4AB /* Release */ = {
+		84ACA3082B5910DD00B78832 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -272,25 +266,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		753DCE002B4DA66C00F6C4AB /* Build configuration list for PBXProject "LazySwiftCycleAndArray" */ = {
+		84ACA2FA2B5910DD00B78832 /* Build configuration list for PBXProject "gameXandO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				753DCE0A2B4DA66C00F6C4AB /* Debug */,
-				753DCE0B2B4DA66C00F6C4AB /* Release */,
+				84ACA3042B5910DD00B78832 /* Debug */,
+				84ACA3052B5910DD00B78832 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		753DCE0C2B4DA66C00F6C4AB /* Build configuration list for PBXNativeTarget "LazySwiftCycleAndArray" */ = {
+		84ACA3062B5910DD00B78832 /* Build configuration list for PBXNativeTarget "gameXandO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				753DCE0D2B4DA66C00F6C4AB /* Debug */,
-				753DCE0E2B4DA66C00F6C4AB /* Release */,
+				84ACA3072B5910DD00B78832 /* Debug */,
+				84ACA3082B5910DD00B78832 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 753DCDFD2B4DA66C00F6C4AB /* Project object */;
+	rootObject = 84ACA2F72B5910DD00B78832 /* Project object */;
 }
