@@ -12,6 +12,7 @@ let symbols = (
     player1: "X",
     player2: "O"
 )
+var field = [[String]]()
 
 print("Добро пожаловать в игру крестики нолики")
 while true {
@@ -39,7 +40,59 @@ while true {
         }
         field.append(row)
     }
+    printField()
     
+    while true {
+        playerTurn(playerName: playerName1, symbol: symbols.player1)
+        printField()
+        if checkIfGameOver() { break }
+        
+        playerTurn(playerName: playerName2, symbol: symbols.player2)
+        printField()
+        if checkIfGameOver() { break }
+    }
+    
+    readLine()
+}
+
+func checkIfGameOver() -> Bool {
+    for row in field {
+        for cell in row {
+            if cell == symbols.empty {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+func playerTurn(playerName: String, symbol: String) {
+    let fieldSize = field.count
+    while true {
+        print("\(playerName) Делает ход")
+        let row = getDataFromUser(description: "Введите номер строки")
+        guard let row = Int(row), row > 0, row <= fieldSize else {
+            print("Введен не верный номер строки")
+            continue
+        }
+        let column = getDataFromUser(description: "Введите номер столбца")
+        guard let column = Int(column), column > 0, column <= fieldSize else {
+            print("Введен не верный номер столбца")
+            continue
+        }
+        let fieldRow = row - 1
+        let fieldColumn = column - 1
+        guard field[fieldRow][fieldColumn] == symbols.empty else {
+            print("Такой ход уже был")
+            continue
+        }
+        field[fieldRow][fieldColumn] = symbol
+        break
+    }
+}
+
+func printField() {
+    let fieldSize = field.count
     var fieldFormatedString = ""
     for row in field {
         fieldFormatedString += "|"
@@ -53,27 +106,6 @@ while true {
         fieldFormatedString += "\n"
     }
     print(fieldFormatedString)
-    
-    print("\(playerName1) Делает ход")
-    let row = getDataFromUser(description: "Введите номер строки")
-    guard let row = Int(row), row >= 0, row < fieldSize else {
-        print("Введен не верный номер строки")
-        continue
-    }
-    let column = getDataFromUser(description: "Введите номер столбца")
-    guard let column = Int(column), column >= 0, column < fieldSize else {
-        print("Введен не верный номер столбца")
-        continue
-    }
-    field[row][column] = symbols.player1
-    
-    
-    
-    readLine()
-}
-
-func printField() {
-    
 }
 
 
