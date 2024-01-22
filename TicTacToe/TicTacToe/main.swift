@@ -42,26 +42,112 @@ while true {
     }
     printField()
     
+    var winnerSymbol: String?
     while true {
         playerTurn(playerName: playerName1, symbol: symbols.player1)
         printField()
+        if let symbol = checkPlayerWon() {
+            winnerSymbol = symbol
+            break
+        }
         if checkIfGameOver() { break }
         
         playerTurn(playerName: playerName2, symbol: symbols.player2)
         printField()
+        if let symbol = checkPlayerWon() {
+            winnerSymbol = symbol
+            break
+        }
         if checkIfGameOver() { break }
     }
     
-    readLine()
+    if winnerSymbol == symbols.player1 {
+        print("Победил: \(playerName1)")
+    } else if winnerSymbol == symbols.player2 {
+        print("Победил: \(playerName2)")
+    } else {
+        print("Игра окончилась в ничью")
+    }
+    
+   let shouldStartNewgame = getDataFromUser(description: "Если хотите начать новую игру введите - да")
+    if shouldStartNewgame != "да" {
+        exit(0)
+    }
 }
 
+func checkPlayerWon() -> String? {
+    return checkPlayerWonByRows()
+        ?? checkPlayerWonByColumn()
+        ?? checkPlayerWonByFirstDiagonal()
+        ?? checkPlayerWonBySecondDiagonal()
+}
 
+func checkPlayerWonBySecondDiagonal() -> String? {
+    let fieldSize = field.count
+    let lastIndex = fieldSize - 1
+    let firsSymbol = field[0][lastIndex]
+    guard firsSymbol != symbols.empty else {
+        return nil
+    }
+    var isWin = true
+    for i in 0..<fieldSize {
+        if field[i][lastIndex - 1] != firsSymbol {
+            isWin = false
+            break
+        }
+    }
+    if isWin {
+        return firsSymbol
+    }
+    return nil
+}
+
+func checkPlayerWonByFirstDiagonal() -> String? {
+    let fieldSize = field.count
+    let firstSymbol = field[0][0]
+    guard firstSymbol != symbols.empty else {
+        return nil
+    }
+    
+    var isWin = true
+    for i in 0..<fieldSize {
+        if field[i][i] != firstSymbol {
+            isWin = false
+            break
+        }
+    }
+    if isWin {
+        return firstSymbol
+    }
+    return nil
+}
+
+func checkPlayerWonByColumn() -> String? {
+    let fieldSize = field.count
+    for i in 0..<fieldSize {
+        let firstSymbol = field[0][i]    //берем первый символ. Строка всегда 0, столбец просматривается от 0 до длины массива (например 3-х)
+        if firstSymbol == symbols.empty {//проверяем что символ он не пустой
+            break
+        }
+        var isWin = true
+        for j in 0..<fieldSize {
+            if field[i][j] != firstSymbol {
+                isWin = false
+                break
+            }
+        }
+        if isWin {
+            return firstSymbol
+        }
+    }
+    return nil
+}
 
 func checkPlayerWonByRows() -> String? {
     let fieldSize = field.count
     for i in 0..<fieldSize {
-        let firstSimbol = field[i][0]
-        if firstSimbol == symbols.empty {
+        let firstSimbol = field[i][0]    //берем первый символ.
+        if firstSimbol == symbols.empty {//проверяем что символ он не пустой
             return nil
         }
         var isWin = true
