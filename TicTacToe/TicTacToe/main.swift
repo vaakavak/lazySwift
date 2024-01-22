@@ -55,6 +55,29 @@ while true {
     readLine()
 }
 
+
+
+func checkPlayerWonByRows() -> String? {
+    let fieldSize = field.count
+    for i in 0..<fieldSize {
+        let firstSimbol = field[i][0]
+        if firstSimbol == symbols.empty {
+            return nil
+        }
+        var isWin = true
+        for j in 0..<fieldSize {
+            if field[i][j] != firstSimbol {
+                isWin = false
+                break
+            }
+        }
+        if isWin {
+            return firstSimbol
+        }
+    }
+    return nil
+}
+
 func checkIfGameOver() -> Bool {
     for row in field {
         for cell in row {
